@@ -10,5 +10,29 @@
 <body>
 <h1>Pick a planet:</h1>
 
+<table class="table table-striped">
+<thead>
+<tr>
+    <th>Planet Name</th>
+    <th>Year Length (in Earth Days)</th>
+    <th>Surface Gravity (ft/sec2)</th>
+    <th>Orbital Period (Length of year in Earth years)</th>
+</tr>
+</thead>
+<!--<span th:field="${Planets}">-->
+<tr th:each= "planet : ${Planets}">
+    <td th:text= "${planet.getPlanetName()}"></td>
+    <td th:text= "${planet.getYearLength()}"></td>
+    <td th:text="${planet.getSurfaceGravity()}"></td>
+    <td th:text="${planet.getOrbitalPeriod()}"></td>
+</tr>
+<!--</span>-->
+</table>
+
+<ul th:each= "planet : ${Planets}">
+    <li th:text= "${planet.getPlanetName()}"></li>
+</ul>
+
+
 </body>
 </html>
